@@ -1,7 +1,7 @@
 FROM debian:jessie
 
-ENV OPENVAS_LIBRARIES_VERSION=8.0.7 \
-  OPENVAS_SCANNER_VERSION=5.0.5
+ENV OPENVAS_LIBRARIES_VERSION=8.0.9 \
+  OPENVAS_SCANNER_VERSION=5.0.8
 
 RUN apt-get update -y && \
   apt-get install -y --no-install-recommends --fix-missing \
