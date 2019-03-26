@@ -8,7 +8,20 @@ RUN apt-get update -y && \
   pkg-config libssh-dev libgnutls28-dev libglib2.0-dev libpcap-dev \
   libgpgme11-dev uuid-dev bison libksba-dev libhiredis-dev libsnmp-dev \
   rsync wget cmake build-essential libgcrypt-dev libldap2-dev doxygen \
-  openssl net-tools nmap && \
+  openssl net-tools nmap \
+  sqlite3 \
+  rsync \
+  ruby \
+  make \
+  man-db \
+  manpages \
+  manpages-dev \
+  mime-support \
+  ndiff \
+  net-tools \
+  netbase \
+  nikto \
+  nmap &&\
   rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /openvas-src && \
