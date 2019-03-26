@@ -1,6 +1,6 @@
 FROM debian:jessie
 
-ENV OPENVAS_LIBRARIES_VERSION=8.0.9 \
+ENV OPENVAS_LIBRARIES_VERSION=9.0.1 \
   OPENVAS_SCANNER_VERSION=5.0.8
 
 RUN apt-get update -y && \
@@ -15,7 +15,7 @@ RUN mkdir /openvas-src && \
 
     # Building openvas-libraries
     cd /openvas-src && \
-    wget -nv http://wald.intevation.org/frs/download.php/2291/openvas-libraries-${OPENVAS_LIBRARIES_VERSION}.tar.gz && \
+    wget -nv http://wald.intevation.org/frs/download.php/file/2420/openvas-libraries-${OPENVAS_LIBRARIES_VERSION}.tar.gz && \
     tar zxvf openvas-libraries-${OPENVAS_LIBRARIES_VERSION}.tar.gz && \
     cd /openvas-src/openvas-libraries-${OPENVAS_LIBRARIES_VERSION} && \
     mkdir build && \
@@ -27,7 +27,7 @@ RUN mkdir /openvas-src && \
 
     # Building openvas-scanner
     cd /openvas-src && \
-    wget -nv http://wald.intevation.org/frs/download.php/2266/openvas-scanner-${OPENVAS_SCANNER_VERSION}.tar.gz && \
+    wget -nv http://wald.intevation.org/frs/download.php/file/2436/openvas-scanner-${OPENVAS_LIBRARIES_VERSION}.tar.gz
     tar zxvf openvas-scanner-${OPENVAS_SCANNER_VERSION}.tar.gz && \
     cd /openvas-src/openvas-scanner-${OPENVAS_SCANNER_VERSION} && \
     mkdir build && \
@@ -41,7 +41,7 @@ RUN mkdir /openvas-src && \
 
 RUN ln -sf /proc/1/fd/1 /usr/local/var/log/openvas/openvassd.messages
 
-EXPOSE 9391
+EXPOSE 9391 9390 
 
 COPY docker-entrypoint.sh /
 
